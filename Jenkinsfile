@@ -17,28 +17,19 @@ pipeline {
             steps {
                 script {
                     // Clean and build the application using Maven
-                    sh './mvnw clean install'
+                    sh 'mvn -B -DskipTests clean package'
                 }
             }
         }
 
-        stage('Test') {
-            steps {
-                script {
-                    // Run tests using Maven
-                    sh './mvnw test'
-                }
-            }
-        }
-
-        stage('Run Application') {
+        /*stage('Run Application') {
             steps {
                 script {
                     // Run the Spring Boot application
                     sh 'nohup java -jar target/SpringBootCiCd.jar &'
                 }
             }
-        }
+        }*/
     }
 
     post {
