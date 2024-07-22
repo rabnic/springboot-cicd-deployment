@@ -35,7 +35,7 @@ pipeline {
             steps {
                 script {
                     // Run the Spring Boot application
-                    sh 'nohup java -jar target/your-spring-boot-app.jar &'
+                    sh 'nohup java -jar target/SpringBootCiCd.jar &'
                 }
             }
         }
